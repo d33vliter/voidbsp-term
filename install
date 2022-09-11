@@ -1,0 +1,87 @@
+#!/bin/bash
+
+#d33vliter
+######Variables#####
+s="sudo"
+il="sudo xbps-install -y"
+#####################
+clear
+
+echo "|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|"
+echo "| VoidBSP Installer |"
+echo "|___________________|"
+echo ""
+echo ""
+sleep 2s
+echo "Introduzca contraseña para continuar"
+sudo -k
+if sudo true; then
+	clear
+	echo "Iniciando Instalación..."
+	sleep 2s
+else
+	clear
+	echo "Debe introduccir contraseña para continuar"
+	exit 1
+fi
+
+
+#ESENCIALES 
+$il at-spi2-core base-devel p7zip xdg-user-dirs xinit gvfs gnome-keyring
+
+#BASE
+$il bspwm sxhkd tint2 dmenu rofi scrot nitrogen xsetroot xdo setxkbmap numlockx \
+    dbus sakura bashmount elogind fuzzypkg fzf zoxide bat
+
+
+#PROGRAMAS ADICIONALES // AUDIO // TIPOGRAFIA // ETC
+
+$il pulsemixer pipewire rtkit rnnoise pfetch nerd-fonts \
+	lxappearance mpv arandr vim-huge file-roller gpicview firefox gnome-themes-extra
+
+#repos nonfree y multilib(tambien 32bit)
+$il void-repo-{nonfree,multilib,multilib-nonfree}
+
+
+#libs para juegos
+$il libgcc-32bit libstdc++-32bit libdrm-32bit libglvnd-32bit freetype-32bit vulkan-loader-32bit mono
+
+#firefox font fix
+$s ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
+$s xbps-reconfigure -f fontconfig
+
+clear
+echo "Aplicando configuraciones..."
+sleep 2s
+
+
+#INICIAR SERVICIOS
+$s ln -s /etc/sv/dbus /var/service/
+$s rm -r /var/service/polkitd
+
+#CONFIG
+xdg-user-dirs-update
+
+echo -e '#autostart
+\nif [ -d "$HOME/.local/bin" ] ; then
+\n    PATH="$HOME/.local/bin:$PATH"
+\nfi
+\npipewire &
+\npipewire-pulse &
+\npipewire -c ~/.config/pipewire/source-rnnoise.conf &
+\nexec dbus-run-session bspwm'> $HOME/.xinitrc 
+
+#archivos de config
+yes | cp -rf config/* ~/.config/
+yes | cp -rf config/_scripts/* ~/.local/bin/
+yes | cp -r config/.bashrc ~/.bashrc
+
+#CARPETA PARA CAPTURES DE PANTALLA
+mkdir $HOME/captures
+
+###
+clear
+echo "Instalación de VoidBsp-term Completada"
+echo "Pulse cualquiera tecla para continuar..."
+read tecla
+clear
