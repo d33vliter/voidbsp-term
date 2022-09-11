@@ -19,8 +19,8 @@ alias cat='bat $(find ~ -type f | fzf)'
 alias c='z $(find ~ -type d | fzf)'
 
 #cd sobre carpeta actual
-alias c.='z $(find  -type d | fzf)'
+alias cc='z $(find -type d | fzf)'
 
 #lo mismo de arriba pero con eliminar
-alias rmf='rm -rfI $(find | fzf -m)'
-alias rmf.='rm -rfI $(find . | fzf -m)'
+alias rmf='rm -rfI $(find ~ | fzf -m)'
+alias rmc='rm -rfI $(find | fzf -m)'
