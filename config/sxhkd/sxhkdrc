@@ -1,0 +1,145 @@
+#mi configs d33vliter
+
+##aplicar configuraciones modificadas en sxhkdrc:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+
+
+
+
+#######################################
+############ PERSONALIZADAS ###########
+#######################################
+
+
+##Terminal
+super + Return
+	sakura
+
+
+##pulsemixer
+super + M
+    sakura -e 'pulsemixer'
+
+##instalar paquetes
+super + i
+    sakura -e 'fuzzypkg'
+
+super + V
+    sakura -e 'vimvim'
+
+##Capturar pantalla
+Print 
+	scrot '%Y-%m-%d-%T-screenshot.png' -e 'mv $f ~/captures/'
+
+
+##Lanzador de Programas // dmenu_run
+super + d 
+	rofi -show drun
+
+#######################################
+###### SALIR//APAGAR//REINICIAR #######
+#######################################
+
+
+##Salir // Reiniciar Bspwm
+super + alt + {q,r}
+	bspc {quit,wm -r}
+
+
+##Apagar PC
+super + alt + p
+	dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager.PowerOff boolean:true
+
+
+##Reiniciar PC
+super + ctrl + r
+	dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager.Reboot boolean:true
+
+
+#######################################
+########## ATAJOS DE VENTANA ##########
+#######################################
+
+
+##Cerrar Ventana
+super + q
+        bspc node -{c}
+
+
+##alternar entre ventana grande o mosaico
+super + m
+         bspc desktop -l next
+
+
+
+
+##Minimizar/Maximizar Ventana
+super + {g,G}
+    {bspc node -g hidden,bspc node $(bspc query -N -n .hidden | tail -n1) -g hidden=off}
+
+
+# Expandir/Contraer Ventana Mosaico
+super + ctrl + {Left, Down, Up, Right}
+        bspc node -z {left -20 0 || bspc node -z right -20 0, \
+        bottom 0 20 || bspc node -z top 0 20,\
+        top 0 -20 || bspc node -z bottom 0 -20,\
+        right 20 0 || bspc node -z left 20 0}
+
+
+
+#########################################
+########## ESTADO DE VENTANAS ###########
+#########################################
+
+
+#ventana en pantalla completa
+super + f
+	bspc node -t {fullscreen, tiled}
+
+
+#ventana flotante
+super + s
+	bspc node -t {floating, tiled}
+
+
+#ventana pseudo mosaico
+super + p
+	bspc node -t {pseudo_tiled, tiled}
+
+
+
+#######################################
+####### ENFOCAR//INTERCAMBIAR #########
+#######################################
+
+
+##dividir ventana de manera horizontal//vertical
+super + h
+        bspc node @/ --flip horizontal && bspc node @/ -R 90
+
+
+##mover de posicion la ventana
+super + shift + {Left,Down,Up,Right}
+	bspc node -{s} {west,south,north,east}
+
+
+##enfocar ventana
+super + {Left,Down,Up,Right}
+	bspc node -{f} {west,south,north,east}
+
+
+##TAB
+super + {grave,Tab}
+	bspc node -f {next,prev}.local.!hidden.window
+
+
+##enviar ventana enfocada al escritorio seleccionado
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+
+#moverse junto con ventana enfocada a escritorio seleccionado
+super + alt + {1-9}
+    id=$(bspc query -N -n); bspc node -d ^{1-9}; bspc node -f ${id}
