@@ -1,9 +1,9 @@
-# VoidBsp
+# VoidBsp-Term
 
 **Script para tener Bspwm listo para su uso en Void Linux**
 
 ---
-[![2022-03-01-14-10-27-screenshot.png](https://i.postimg.cc/kgqRLXBH/2022-03-01-14-10-27-screenshot.png)](https://postimg.cc/HVvLym00)
+[![Captura-de-pantalla-de-2022-09-11-13-04-11.png](https://i.postimg.cc/XvYwsyV2/Captura-de-pantalla-de-2022-09-11-13-04-11.png)](https://postimg.cc/hXNzjvQx)
 
 ---
 
@@ -24,15 +24,15 @@ Hokeys Daemon: **Sxhkd** [(Ver atajos de Sxhkd)](https://gitlab.com/d33vliter/vo
 
 Navegador: **Firefox**
 
-Gestor de Archivos: **PCManFM**
+Gestor de Archivos: **no hace falta 🌚 | pero me muevo con fzf**
 
 Extractor de Archivos: **file-roller**
 
-Network Manager: **Nmtui**
+Network Manager: **no hace falta 🌚**
 
 Terminal: **Sakura**
 
-Editor de Textos: **Leafpad y Vim**
+Editor de Textos: **Vim**
 
 Reproductor Multimedia: **MPV**
 
@@ -40,7 +40,7 @@ Administrador de dispositivos de audio: **Pulsemixer**
 
 Applet de volumen: **Volumeicon**
 
-Gestor de Wallpaper: **Nitrogen**
+Gestor de Wallpaper: **no hace falta 🌚**
 
 Cambiar Resolución de Pantalla: **Arandr**
 
