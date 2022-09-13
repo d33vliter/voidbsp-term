@@ -33,6 +33,8 @@ $il at-spi2-core base-devel p7zip xdg-user-dirs xinit gvfs gnome-keyring
 $il bspwm sxhkd tint2 dmenu rofi scrot nitrogen xsetroot xdo setxkbmap numlockx \
     dbus sakura bashmount elogind fuzzypkg fzf zoxide bat
 
+#RANGER Y DEPENDENCIAS :V
+$il ranger 3wm-img zathura zathura-pdf-mupdf mupdf-tools dragon
 
 #PROGRAMAS ADICIONALES // AUDIO // TIPOGRAFIA // ETC
 
