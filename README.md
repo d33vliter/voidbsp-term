@@ -24,7 +24,7 @@ Hokeys Daemon: **Sxhkd** [(Ver atajos de Sxhkd)](https://gitlab.com/d33vliter/vo
 
 Navegador: **Firefox**
 
-Gestor de Archivos: **no hace falta 🌚 | pero me muevo con fzf**
+Gestor de Archivos: **Ranger 🌚**
 
 Extractor de Archivos: **file-roller**
 
@@ -37,8 +37,6 @@ Editor de Textos: **Vim**
 Reproductor Multimedia: **MPV**
 
 Administrador de dispositivos de audio: **Pulsemixer**
-
-Applet de volumen: **Volumeicon**
 
 Gestor de Wallpaper: **no hace falta 🌚**
 
