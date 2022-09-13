@@ -20,7 +20,7 @@ Panel: **Tint2**
 
 Gestor de ventanas: **BSPWM** 
 
-Hokeys Daemon: **Sxhkd** [(Ver atajos de Sxhkd)](https://gitlab.com/d33vliter/voidbsp/-/blob/master/config/sxhkd/sxhkdrc)
+Hokeys Daemon: **Sxhkd** [(Ver atajos de Sxhkd)](config/sxhkd/sxhkdrc)
 
 Navegador: **Firefox**
 
