@@ -3,7 +3,7 @@
 **Script para tener Bspwm listo para su uso en Void Linux**
 
 ---
-[![Captura-de-pantalla-de-2022-09-11-13-04-11.png](https://i.postimg.cc/XvYwsyV2/Captura-de-pantalla-de-2022-09-11-13-04-11.png)](https://postimg.cc/hXNzjvQx)
+[![2022-10-10-00-12-22-screenshot.png](https://i.postimg.cc/WbrZccKc/2022-10-10-00-12-22-screenshot.png)](https://postimg.cc/svjx5qsT)
 
 ---
 
@@ -16,7 +16,7 @@ Ejecutalo con: `./install`
 
 Algunos Paquetes que contiene:
 
-Panel: **Tint2**
+Panel: **Polybar**
 
 Gestor de ventanas: **BSPWM** 
 
@@ -32,13 +32,13 @@ Network Manager: **no hace falta 🌚**
 
 Terminal: **Sakura**
 
-Editor de Textos: **Vim**
+Editor de Textos: **NeoVim**
 
 Reproductor Multimedia: **MPV**
 
 Administrador de dispositivos de audio: **Pulsemixer**
 
-Gestor de Wallpaper: **no hace falta 🌚**
+Gestor de Wallpaper: **escribir en la terminal "wall" luego marcar con "m" el wallpaper que quieres, salir con "q" 🌚**
 
 Cambiar Resolución de Pantalla: **Arandr**
 
