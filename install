@@ -27,19 +27,19 @@ fi
 
 
 #ESENCIALES 
-$il at-spi2-core base-devel p7zip xdg-user-dirs xinit gvfs gnome-keyring
+$il at-spi2-core base-devel p7zip xdg-user-dirs xinit gvfs gnome-keyring lxsession
 
 #BASE
-$il bspwm sxhkd tint2 dmenu rofi scrot nitrogen xsetroot xdo setxkbmap numlockx \
-    dbus sakura bashmount elogind fuzzypkg fzf zoxide bat
+$il bspwm sxhkd polybar dmenu rofi scrot sxiv xsetroot xdo setxkbmap numlockx \
+	dbus sakura bashmount elogind fuzzypkg fzf zoxide bat
 
 #RANGER Y DEPENDENCIAS :V
-$il ranger 3wm-img zathura zathura-pdf-mupdf mupdf-tools dragon
+$il ranger ueberzug zathura zathura-pdf-mupdf mupdf-tools dragon
 
 #PROGRAMAS ADICIONALES // AUDIO // TIPOGRAFIA // ETC
 
-$il pulsemixer pipewire rtkit rnnoise pfetch nerd-fonts \
-	lxappearance mpv arandr vim-huge file-roller gpicview firefox gnome-themes-extra
+$il pulsemixer pipewire rtkit pfetch nerd-fonts lxappearance mpv arandr \ 
+	nvim file-roller feh firefox gnome-themes-extra
 
 #repos nonfree y multilib(tambien 32bit)
 $il void-repo-{nonfree,multilib,multilib-nonfree}
@@ -70,13 +70,13 @@ echo -e '#autostart
 \nfi
 \npipewire &
 \npipewire-pulse &
-\npipewire -c ~/.config/pipewire/source-rnnoise.conf &
 \nexec dbus-run-session bspwm'> $HOME/.xinitrc 
 
 #archivos de config
-yes | cp -rf config/* ~/.config/
-yes | cp -rf config/_scripts/* ~/.local/bin/
-yes | cp -r config/.bashrc ~/.bashrc
+yes | cp -rf .config/* ~/.config/
+yes | cp -rf bash/_scripts/* ~/.local/bin/
+yes | cp -r bash/.bashrc ~/.bashrc
+yes | cp -r bash/.bash_profile ~/.bash_profile
 
 #CARPETA PARA CAPTURES DE PANTALLA
 mkdir $HOME/captures

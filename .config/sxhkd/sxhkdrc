@@ -19,15 +19,18 @@ super + Return
 
 
 ##pulsemixer
-super + M
+super alt + m
     sakura -e 'pulsemixer'
 
 ##instalar paquetes
 super + i
     sakura -e 'fuzzypkg'
 
-super + V
+super + alt + f
     sakura -e 'vimvim'
+
+super + R
+    sakura -e 'ranger'
 
 ##Capturar pantalla
 Print 

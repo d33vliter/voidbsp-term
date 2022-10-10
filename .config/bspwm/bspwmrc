@@ -7,20 +7,44 @@
 #Monitor
 xrandr --dpi 94
 
+#wallpaper
+#pkill nitrogen
+#nitrogen --restore
+
+#feh
+pkill feh
+~/.fehbg
+
+#picom
+pkill picom
+picom -f -D 2 --blur-method "dual_kawase" --blur-strength 3 --experimental-backends --backend glx &
+#picom -f -D 2 &
+
+#clipit
+#pkill clipit
+#clipit &
+
 #Numkey
 numlockx on
 
 #Cursor
-xsetroot -cursor_name tcross
+xsetroot -cursor_name left_ptr
 
 #Keyboard
 setxkbmap -layout us -variant intl
 
-#Panel
-pkill tint2
-tint2 &
-sleep 0.1 &&
-xdo above -t "$(xdo id -N Bspwm -n root | sort | head -n 1)" $(xdo id -n tint2)
+#polkit
+pkill /usr/bin/lxpolkit
+/usr/bin/lxpolkit &
+
+#Notify
+#pkill xfce4-notifyd
+#/usr/lib/xfce4/notifyd/xfce4-notifyd &
+
+#polybar
+pkill polybar
+polybar &
+
 
 #Keybind
 pkill sxhkd
@@ -38,8 +62,5 @@ bspc config focused_border_color "#FFFFFF" #A2A2A3
 
 bspc config split_ratio          0.50
 bspc config borderless_monocle   true
-#bspc config gapless_monocle      true
-bspc config single_monocle	true
-
-
-bspc rule -a tint2 layer=below
+bspc config gapless_monocle      true
+bspc config single_monocle	 true

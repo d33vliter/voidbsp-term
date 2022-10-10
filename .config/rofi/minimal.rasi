@@ -18,7 +18,7 @@ configuration {
 }
 
 * {
-  bg: #000000;
+  bg: #27292D;
   bg-alt: #414141;
 
   fg: #ffffff;
@@ -63,6 +63,7 @@ listview {
 
 mainbox {
   children: [inputbar, listview];
+  padding: 12 0 0 12;
 }
 
 prompt {
@@ -73,5 +74,6 @@ prompt {
 window {
   transparency: "real";
   border: 1;
-  border-color: #000000;
+  border-color: #ffffff;
+  border-radius: 0px;
 }
