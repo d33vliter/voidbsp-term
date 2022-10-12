@@ -27,7 +27,7 @@ fi
 
 
 #ESENCIALES 
-$il at-spi2-core base-devel p7zip xdg-user-dirs xinit gvfs gnome-keyring lxsession
+$il at-spi2-core base-devel p7zip xdg-user-dirs xorg gvfs gnome-keyring lxsession
 
 #BASE
 $il bspwm sxhkd polybar dmenu rofi scrot sxiv xsetroot xdo setxkbmap numlockx \
@@ -38,8 +38,8 @@ $il ranger ueberzug zathura zathura-pdf-mupdf mupdf-tools dragon
 
 #PROGRAMAS ADICIONALES // AUDIO // TIPOGRAFIA // ETC
 
-$il pulsemixer pipewire rtkit pfetch nerd-fonts lxappearance mpv arandr \ 
-	nvim file-roller feh firefox gnome-themes-extra
+$il pulsemixer pipewire rtkit pfetch nerd-fonts lxappearance mpv arandr \
+	neovim file-roller feh firefox gnome-themes-extra picom
 
 #repos nonfree y multilib(tambien 32bit)
 $il void-repo-{nonfree,multilib,multilib-nonfree}
@@ -74,12 +74,21 @@ echo -e '#autostart
 
 #archivos de config
 yes | cp -rf .config/* ~/.config/
-yes | cp -rf bash/_scripts/* ~/.local/bin/
+mkdir -p ~/.local/bin
+yes | cp -r bash/_scripts/* ~/.local/bin/
 yes | cp -r bash/.bashrc ~/.bashrc
 yes | cp -r bash/.bash_profile ~/.bash_profile
 
 #CARPETA PARA CAPTURES DE PANTALLA
 mkdir $HOME/captures
+
+mkdir $HOME/Wallpapers
+
+#wallpaper
+$s rm -r /usr/share/wall
+$s mkdir /usr/share/wall
+$s cp -r default_wallpaper/murky_peaks.jpg /usr/share/wall/
+yes | cp -r default_wallpaper/.fehbg ~/.fehbg
 
 ###
 clear
