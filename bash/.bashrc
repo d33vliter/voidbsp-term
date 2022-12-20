@@ -12,7 +12,6 @@ alias cc='z $(find -type d | fzf)'
 alias rmf='rm -rfI $(ls | fzf -m)'
 alias rmc='rm -rfI $(find | fzf -m)'
 alias bm='bashmount'
-alias wall='sxiv -rqot  ~/Wallpapers/ | xargs feh --bg-scale'
 
 #Exports personalizados
 #fzf.vim

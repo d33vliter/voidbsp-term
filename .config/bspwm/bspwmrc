@@ -8,12 +8,8 @@
 xrandr --dpi 94
 
 #wallpaper
-#pkill nitrogen
-#nitrogen --restore
-
-#feh
-pkill feh
-~/.fehbg
+pkill nitrogen
+nitrogen --restore
 
 #picom
 pkill picom
@@ -21,8 +17,8 @@ picom -f -D 2 --blur-method "dual_kawase" --blur-strength 3 --experimental-backe
 #picom -f -D 2 &
 
 #clipit
-#pkill clipit
-#clipit &
+pkill clipit
+clipit &
 
 #Numkey
 numlockx on

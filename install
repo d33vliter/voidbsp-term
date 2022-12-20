@@ -30,11 +30,11 @@ fi
 $il at-spi2-core base-devel p7zip xdg-user-dirs xorg gvfs gnome-keyring lxsession
 
 #BASE
-$il bspwm sxhkd polybar dmenu rofi scrot sxiv xsetroot xdo setxkbmap numlockx \
-	dbus sakura bashmount elogind fuzzypkg fzf zoxide bat
+$il bspwm sxhkd polybar dmenu rofi scrot xsetroot xdo setxkbmap numlockx \
+	dbus sakura bashmount elogind fuzzypkg fzf zoxide bat clipit
 
 #RANGER Y DEPENDENCIAS :V
-$il ranger ueberzug zathura zathura-pdf-mupdf mupdf-tools dragon
+$il ranger ueberzug dragon
 
 #PROGRAMAS ADICIONALES // AUDIO // TIPOGRAFIA // ETC
 
@@ -88,7 +88,6 @@ mkdir $HOME/Wallpapers
 $s rm -r /usr/share/wall
 $s mkdir /usr/share/wall
 $s cp -r default_wallpaper/murky_peaks.jpg /usr/share/wall/
-yes | cp -r default_wallpaper/.fehbg ~/.fehbg
 
 ###
 clear
