@@ -7,8 +7,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'camspiers/animate.vim'
 Plug 'camspiers/lens.vim'
 
-Plug 'sainnhe/sonokai'
-Plug 'arcticicestudio/nord-vim'
+Plug 'morhetz/gruvbox'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -24,10 +23,11 @@ set autochdir
 set noswapfile
 set splitbelow
 set splitright
+set mouse=
 
 "CONFIGURACIÓN DE TEMAS
 set termguicolors
-colorscheme nord
+colorscheme gruvbox
 
 
 "KEYMAPS

@@ -3,8 +3,7 @@
 **Script para tener Bspwm listo para su uso en Void Linux**
 
 ---
-[![2022-10-10-00-12-22-screenshot.png](https://i.postimg.cc/WbrZccKc/2022-10-10-00-12-22-screenshot.png)](https://postimg.cc/svjx5qsT)
-
+[![2022-12-21-15-30-44-screenshot.png](https://i.postimg.cc/hvZPXtJ5/2022-12-21-15-30-44-screenshot.png)](https://postimg.cc/V0McT1Wq)
 ---
 
 Recuerda volverlo ejecutable con `chmod +x install`
@@ -24,7 +23,7 @@ Hokeys Daemon: **Sxhkd** [(Ver atajos de Sxhkd)](config/sxhkd/sxhkdrc)
 
 Navegador: **Firefox**
 
-Gestor de Archivos: **Ranger 🌚**
+Gestor de Archivos: **PcManFM 🌚**
 
 Extractor de Archivos: **file-roller**
 
@@ -38,7 +37,7 @@ Reproductor Multimedia: **MPV**
 
 Administrador de dispositivos de audio: **Pulsemixer**
 
-Gestor de Wallpaper: **escribir en la terminal "wall" luego marcar con "m" el wallpaper que quieres, salir con "q" 🌚**
+Gestor de Wallpaper: **Nitrogen 🌚**
 
 Cambiar Resolución de Pantalla: **Arandr**
 

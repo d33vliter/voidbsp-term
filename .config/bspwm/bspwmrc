@@ -13,8 +13,7 @@ nitrogen --restore
 
 #picom
 pkill picom
-picom -f -D 2 --blur-method "dual_kawase" --blur-strength 3 --experimental-backends --backend glx &
-#picom -f -D 2 &
+picom -f -D 2 --backend glx & 
 
 #clipit
 pkill clipit
@@ -32,10 +31,6 @@ setxkbmap -layout us -variant intl
 #polkit
 pkill /usr/bin/lxpolkit
 /usr/bin/lxpolkit &
-
-#Notify
-#pkill xfce4-notifyd
-#/usr/lib/xfce4/notifyd/xfce4-notifyd &
 
 #polybar
 pkill polybar

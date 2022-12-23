@@ -29,8 +29,6 @@ super + i
 super + alt + f
     sakura -e 'vimvim'
 
-super + R
-    sakura -e 'ranger'
 
 ##Capturar pantalla
 Print 
