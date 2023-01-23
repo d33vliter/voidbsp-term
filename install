@@ -90,3 +90,4 @@ echo "Instalación de VoidBsp-term Completada"
 echo "Pulse cualquiera tecla para continuar..."
 read tecla
 clear
+$s reboot
