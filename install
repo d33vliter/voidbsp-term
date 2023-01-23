@@ -31,12 +31,12 @@ $il at-spi2-core base-devel p7zip xdg-user-dirs xorg gvfs gnome-keyring lxsessio
 
 #BASE
 $il bspwm sxhkd polybar dmenu rofi scrot xsetroot xdo setxkbmap numlockx \
-	dbus sakura elogind fuzzypkg fzf zoxide bat clipit pcmanfm
+	dbus sakura elogind fuzzypkg fzf bat clipit pcmanfm
 
 #PROGRAMAS ADICIONALES // AUDIO // TIPOGRAFIA // ETC
 
 $il pulsemixer pipewire rtkit pfetch nerd-fonts lxappearance mpv arandr \
-	neovim file-roller feh firefox gnome-themes-extra picom
+	neovim file-roller nitrogen firefox gnome-themes-extra picom
 
 #repos nonfree y multilib(tambien 32bit)
 $il void-repo-{nonfree,multilib,multilib-nonfree}
@@ -79,12 +79,10 @@ yes | cp -r bash/.bash_profile ~/.bash_profile
 #CARPETA PARA CAPTURES DE PANTALLA
 mkdir $HOME/captures
 
-mkdir $HOME/Wallpapers
-
 #wallpaper
 $s rm -r /usr/share/wall
 $s mkdir /usr/share/wall
-$s cp -r default_wallpaper/default.jpg.jpg /usr/share/wall/
+$s cp -r default_wallpaper/default.jpg /usr/share/wall/
 
 ###
 clear
