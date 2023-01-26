@@ -4,7 +4,7 @@ PS1='[\u@\h \W]\$ '
 export SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS=0
 
 #alias personalizados
-alias d='dragon -a -x "$(ls -r | fzf -m)"'
+alias d='dragon-drop -a -x "$(ls -r | fzf -m)"'
 alias v='vim $(find ~ -type f | fzf)'
 alias bat='bat $(find ~ -type f | fzf)'
 alias rmf='rm -rfI $(ls | fzf -m)'
