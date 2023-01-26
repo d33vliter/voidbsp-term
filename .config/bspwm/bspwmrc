@@ -16,8 +16,8 @@ pkill picom
 picom -f -D 2 --backend glx & 
 
 #clipit
-pkill clipit
-clipit &
+pkill parcellite
+parcellite &
 
 #Numkey
 numlockx on
