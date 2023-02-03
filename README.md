@@ -19,7 +19,7 @@ Panel: **Polybar**
 
 Gestor de ventanas: **BSPWM** 
 
-Hokeys Daemon: **Sxhkd** [(Ver atajos de Sxhkd)](config/sxhkd/sxhkdrc)
+Hokeys Daemon: **Sxhkd** [(Ver atajos de Sxhkd)](.config/sxhkd/sxhkdrc)
 
 Navegador: **Firefox**
 
