@@ -35,7 +35,7 @@ $il bspwm sxhkd polybar dmenu rofi scrot xsetroot xdo setxkbmap numlockx \
 
 #PROGRAMAS ADICIONALES // AUDIO // TIPOGRAFIA // ETC
 
-$il pulsemixer pipewire rtkit pfetch nerd-fonts lxappearance mpv arandr \
+$il pulsemixer wireplumber pipewire rtkit pfetch nerd-fonts lxappearance mpv arandr \
 	neovim file-roller nitrogen firefox gnome-themes-extra picom
 
 #repos nonfree y multilib(tambien 32bit)
