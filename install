@@ -70,7 +70,7 @@ echo -e '#autostart
 \nfi
 \npipewire &
 \npipewire-pulse &
-\nexec dbus-run-session qtile'> $HOME/.xinitrc 
+\nexec dbus-run-session bspwm'> $HOME/.xinitrc 
 
 #PIPEWIRE_CONFIG
 $s mkdir -p /etc/pipewire/pipewire.conf.d
