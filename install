@@ -32,7 +32,7 @@ $s xbps-install -Sy
 $il at-spi2-core base-devel p7zip xdg-user-dirs xorg gvfs gnome-keyring lxsession
 
 #BASE
-$il bspwm sxhkd polybar dmenu rofi scrot xsetroot xdo setxkbmap numlockx \
+$il qtile rofi scrot xsetroot xdo setxkbmap numlockx \
 	dbus sakura elogind fuzzypkg fzf zoxide bat clipit pcmanfm
 
 #PROGRAMAS ADICIONALES // AUDIO // TIPOGRAFIA // ETC
