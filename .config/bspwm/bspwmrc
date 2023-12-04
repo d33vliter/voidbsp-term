@@ -13,7 +13,7 @@ nitrogen --restore
 
 #picom
 pkill picom
-picom -f -D 2 --backend glx & 
+picom -f -D 2 & 
 
 #clipit
 pkill parcellite
