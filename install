@@ -25,6 +25,8 @@ else
 	exit 1
 fi
 
+#UPDATE
+$s xbps-install -Sy
 
 #ESENCIALES 
 $il at-spi2-core base-devel p7zip xdg-user-dirs xorg gvfs gnome-keyring lxsession
@@ -36,14 +38,15 @@ $il bspwm sxhkd polybar dmenu rofi scrot xsetroot xdo setxkbmap numlockx \
 #PROGRAMAS ADICIONALES // AUDIO // TIPOGRAFIA // ETC
 
 $il pulsemixer wireplumber pipewire rtkit pfetch nerd-fonts lxappearance mpv arandr \
-	neovim file-roller nitrogen firefox gnome-themes-extra picom
+	neovim file-roller nitrogen firefox gnome-themes-extra-gtk picom
 
 #repos nonfree y multilib(tambien 32bit)
 $il void-repo-{nonfree,multilib,multilib-nonfree}
+$s xbps-install -Sy
 
 
 #libs para juegos
-$il libgcc-32bit libstdc++-32bit libdrm-32bit libglvnd-32bit freetype-32bit vulkan-loader-32bit mono
+$il libgcc-32bit libstdc++-32bit libdrm-32bit libglvnd-32bit freetype-32bit vulkan-loader-32bit
 
 #firefox font fix
 $s ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
@@ -68,6 +71,11 @@ echo -e '#autostart
 \npipewire &
 \npipewire-pulse &
 \nexec dbus-run-session bspwm'> $HOME/.xinitrc 
+
+#PIPEWIRE_CONFIG
+$s mkdir -p /etc/pipewire/pipewire.conf.d
+$s ln -s /usr/share/examples/wireplumber/10-wireplumber.conf /etc/pipewire/pipewire.conf.d/
+$s ln -s /usr/share/examples/pipewire/20-pipewire-pulse.conf /etc/pipewire/pipewire.conf.d/
 
 #archivos de config
 yes | cp -rf .config/* ~/.config/
