@@ -32,7 +32,7 @@ $s xbps-install -Sy
 $il at-spi2-core base-devel p7zip xdg-user-dirs xorg gvfs gnome-keyring lxsession
 
 #BASE
-$il bspwm sxhkd polybar dmenu rofi scrot xsetroot xdo setxkbmap numlockx \
+$il qtile dmenu rofi scrot xsetroot xdo setxkbmap numlockx \
 	dbus sakura elogind fuzzypkg fzf feh bat parcellite dragon pcmanfm
 
 #PROGRAMAS ADICIONALES // AUDIO // TIPOGRAFIA // ETC
@@ -70,7 +70,7 @@ echo -e '#autostart
 \nfi
 \npipewire &
 \npipewire-pulse &
-\nexec dbus-run-session bspwm'> $HOME/.xinitrc 
+\nexec dbus-run-session qtile'> $HOME/.xinitrc 
 
 #PIPEWIRE_CONFIG
 $s mkdir -p /etc/pipewire/pipewire.conf.d
