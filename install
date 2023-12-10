@@ -29,7 +29,7 @@ fi
 $s xbps-install -Sy
 
 #ESENCIALES 
-$il at-spi2-core base-devel p7zip xdg-user-dirs xorg gvfs gnome-keyring lxsession
+$il at-spi2-core base-devel p7zip xdg-user-dirs xorg gvfs gnome-keyring lxsession dash
 
 #BASE
 $il bspwm sxhkd polybar dmenu rofi scrot xsetroot xdo setxkbmap numlockx \
