@@ -29,7 +29,7 @@ fi
 $s xbps-install -Sy
 
 #ESENCIALES
-$il at-spi2-core p7zip xdg-user-dirs xorg-minimal gvfs gnome-keyring lxsession dash
+$il at-spi2-core p7zip xdg-user-dirs xorg-minimal xorg-fonts xorg-video-drivers gvfs gnome-keyring lxsession dash
 
 #PARA COMPILAR(OPCIONAL)
 $il base-devel
