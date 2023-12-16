@@ -25,30 +25,31 @@ else
 	exit 1
 fi
 
-#UPDATE
+#UPDATE REPO
 $s xbps-install -Sy
 
-#ESENCIALES 
-$il at-spi2-core base-devel p7zip xdg-user-dirs xorg gvfs gnome-keyring lxsession dash
+#ESENCIALES
+$il at-spi2-core p7zip xdg-user-dirs xorg gvfs gnome-keyring lxsession dash
+
+#PARA COMPILAR(OPCIONAL)
+$il base-devel
 
 #BASE
 $il bspwm sxhkd polybar dmenu rofi scrot xsetroot xdo setxkbmap numlockx \
 	dbus sakura elogind fuzzypkg fzf feh bat parcellite dragon pcmanfm
 
 #PROGRAMAS ADICIONALES // AUDIO // TIPOGRAFIA // ETC
-
 $il pulsemixer wireplumber pipewire rtkit pfetch nerd-fonts lxappearance mpv arandr \
 	neovim file-roller nitrogen firefox gnome-themes-extra-gtk picom
 
-#repos nonfree y multilib(tambien 32bit)
+#REPOS NON-FREE Y MULTILIB(32bit)
 $il void-repo-{nonfree,multilib,multilib-nonfree}
 $s xbps-install -Sy
 
+#LIBS PARA JUEGOS(OPCIONAL)
+#$il libgcc-32bit libstdc++-32bit libdrm-32bit libglvnd-32bit freetype-32bit vulkan-loader-32bit
 
-#libs para juegos
-$il libgcc-32bit libstdc++-32bit libdrm-32bit libglvnd-32bit freetype-32bit vulkan-loader-32bit
-
-#firefox font fix
+#FIREFOX FONT FIX
 $s ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
 $s xbps-reconfigure -f fontconfig
 
@@ -69,7 +70,6 @@ echo -e '#autostart
 \n    PATH="$HOME/.local/bin:$PATH"
 \nfi
 \npipewire &
-\npipewire-pulse &
 \nexec dbus-run-session bspwm'> $HOME/.xinitrc 
 
 #PIPEWIRE_CONFIG
