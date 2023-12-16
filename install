@@ -32,7 +32,7 @@ $s xbps-install -Sy
 $il at-spi2-core p7zip xdg-user-dirs xorg-minimal xorg-fonts xorg-video-drivers xsetroot gvfs gnome-keyring lxsession dash
 
 #PARA COMPILAR(OPCIONAL)
-$il base-devel
+#$il base-devel
 
 #BASE
 $il bspwm sxhkd polybar dmenu rofi scrot xsetroot xdo setxkbmap numlockx \
