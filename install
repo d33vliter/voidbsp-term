@@ -77,7 +77,7 @@ $s mkdir -p /etc/pipewire/pipewire.conf.d
 $s ln -s /usr/share/examples/wireplumber/10-wireplumber.conf /etc/pipewire/pipewire.conf.d/
 $s ln -s /usr/share/examples/pipewire/20-pipewire-pulse.conf /etc/pipewire/pipewire.conf.d/
 
-#archivos de config
+#ARCHIVOS DE CONFIG
 yes | cp -rf .config/* ~/.config/
 mkdir -p ~/.local/bin
 yes | cp -r bash/_scripts/* ~/.local/bin/
