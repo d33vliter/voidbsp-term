@@ -15,9 +15,9 @@ nitrogen --restore
 pkill picom
 picom -f -D 2 & 
 
-#clipit
+#parcellite
 pkill parcellite
-parcellite &
+parcellite -n &
 
 #Numkey
 numlockx on
