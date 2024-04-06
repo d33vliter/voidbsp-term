@@ -39,7 +39,7 @@ $il bspwm sxhkd polybar dmenu rofi scrot xsetroot xdo setxkbmap numlockx \
 	dbus sakura elogind fuzzypkg fzf feh bat parcellite dragon pcmanfm
 
 #PROGRAMAS ADICIONALES // AUDIO // TIPOGRAFIA // ETC
-$il pulsemixer wireplumber pipewire rtkit pfetch nerd-fonts lxappearance mpv arandr \
+$il pulsemixer pipewire rtkit pfetch nerd-fonts lxappearance mpv arandr \
 	neovim file-roller nitrogen firefox gnome-themes-extra-gtk picom
 
 #REPOS NON-FREE Y MULTILIB(32bit)
