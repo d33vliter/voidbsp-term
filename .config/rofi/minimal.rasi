@@ -18,7 +18,7 @@ configuration {
 }
 
 * {
-  bg: #2D2D2D;
+  bg: #000000;
   bg-alt: #414141;
 
   fg: #ffffff;
@@ -74,6 +74,6 @@ prompt {
 window {
   transparency: "real";
   border: 1;
-  border-color: #ffffff;
+  border-color: #7F2B78;
   border-radius: 0px;
 }

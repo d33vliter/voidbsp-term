@@ -7,7 +7,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'camspiers/animate.vim'
 Plug 'camspiers/lens.vim'
 
-Plug 'morhetz/gruvbox'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -17,7 +17,7 @@ call plug#end()
 
 "GENERAL
 set number
-set nowrap
+"set nowrap
 set cursorline
 set autochdir
 set noswapfile
@@ -27,7 +27,7 @@ set mouse=
 
 "CONFIGURACIÓN DE TEMAS
 set termguicolors
-colorscheme gruvbox
+colorscheme dracula
 
 
 "KEYMAPS

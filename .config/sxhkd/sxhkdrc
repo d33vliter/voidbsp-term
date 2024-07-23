@@ -33,7 +33,7 @@ super + alt + f
 
 ##Capturar pantalla
 Print 
-	scrot '%Y-%m-%d-%T-screenshot.png' -e 'mv $f ~/captures/'
+	scrot '%Y-%m-%d-%T-screenshot.png' -e 'mv $f ~/captures/' && notify-send -t 3500 "Se capturo Pantalla"
 
 
 ##Lanzador de Programas // dmenu_run
