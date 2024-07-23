@@ -3,7 +3,7 @@
 **Script para tener Bspwm listo para su uso en Void Linux**
 
 ---
-[![2022-12-21-15-30-44-screenshot.png](https://i.postimg.cc/hvZPXtJ5/2022-12-21-15-30-44-screenshot.png)](https://postimg.cc/V0McT1Wq)
+[![Captura-de-pantalla-de-2024-07-23-18-08-39.png](https://i.postimg.cc/KcrbPf1N/Captura-de-pantalla-de-2024-07-23-18-08-39.png)](https://postimg.cc/vDBCMWLg)
 ---
 
 Recuerda volverlo ejecutable con `chmod +x install`
