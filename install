@@ -1,4 +1,4 @@
-#!/bin/bash
+/#!/bin/bash
 
 #d33vliter
 ######Variables#####
@@ -40,7 +40,7 @@ $il bspwm sxhkd polybar dmenu rofi scrot xsetroot xdo setxkbmap numlockx \
 
 #PROGRAMAS ADICIONALES // AUDIO // TIPOGRAFIA // ETC
 $il pulsemixer pipewire rtkit pfetch nerd-fonts nwg-look mpv arandr \
-	neovim file-roller nitrogen firefox gnome-themes-extra-gtk picom
+	neovim xarchiver nitrogen firefox gnome-themes-extra-gtk picom
 
 #REPOS NON-FREE Y MULTILIB(32bit)
 $il void-repo-{nonfree,multilib,multilib-nonfree}
