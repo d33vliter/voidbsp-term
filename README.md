@@ -41,4 +41,4 @@ Gestor de Wallpaper: **Nitrogen 🌚**
 
 Cambiar Resolución de Pantalla: **Arandr**
 
-Para cambiar apariencia: **Lxappearance**
+Para cambiar apariencia: **nwg-look**
