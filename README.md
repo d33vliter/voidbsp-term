@@ -25,7 +25,7 @@ Navegador: **Firefox**
 
 Gestor de Archivos: **PcManFM 🌚**
 
-Extractor de Archivos: **file-roller**
+Extractor de Archivos: **xarchiver**
 
 Network Manager: **no hace falta 🌚**
 
