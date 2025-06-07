@@ -1,4 +1,4 @@
-#!/usr/bin/env dash
+#!/usr/bin/dash
 
 ###########
 #AUTOSTART#
@@ -8,16 +8,13 @@
 xrandr --dpi 94
 
 #wallpaper
-pkill nitrogen
-nitrogen --restore
+pkill nitrogen && nitrogen --restore
 
 #picom
-pkill picom
-picom -f -D 2 & 
+pkill picom && picom --backend glx -f -D 3 & 
 
 #parcellite
-pkill parcellite
-parcellite &
+pkill parcellite && parcellite &
 
 #Numkey
 numlockx on
@@ -29,12 +26,10 @@ xsetroot -cursor_name left_ptr
 setxkbmap -layout us -variant intl
 
 #polkit
-pkill /usr/bin/lxpolkit
-/usr/bin/lxpolkit &
+pkill /usr/bin/lxpolkit && /usr/bin/lxpolkit &
 
 #polybar
-pkill polybar
-polybar &
+pkill polybar && polybar &
 
 #Keybind
 pkill sxhkd
@@ -57,4 +52,4 @@ bspc config single_monocle	 true
 
 
 #aplicaciones
-bspc rule -a '*:sakura' desktop=^4 follow=on
+bspc rule -a Steam desktop='^4' follow=off

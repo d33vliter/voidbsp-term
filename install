@@ -1,101 +1,100 @@
-/#!/bin/bash
+#!/bin/bash
 
-#d33vliter
-######Variables#####
-s="sudo"
-il="sudo xbps-install -y"
-#####################
+# VoidBSP Installer by d33vliter
+
+### Verificar que el script se ejecuta como root ###
+if [ "$EUID" -ne 0 ]; then
+    echo "Por favor, ejecuta este script como root (con sudo)"
+    exit 1
+fi
+
+### Alias y configuración ###
+il="xbps-install -y"
 clear
 
+### Pantalla de inicio ###
 echo "|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|"
 echo "| VoidBSP Installer |"
 echo "|___________________|"
 echo ""
-echo ""
 sleep 2s
-echo "Introduzca contraseña para continuar"
-sudo -k
-if sudo true; then
-	clear
-	echo "Iniciando Instalación..."
-	sleep 2s
-else
-	clear
-	echo "Debe introduccir contraseña para continuar"
-	exit 1
-fi
 
-#UPDATE REPO
-$s xbps-install -Sy
+### Repositorio y actualización inicial ###
+echo "Actualizando repositorios..."
+xbps-install -Sy
 
-#ESENCIALES
-$il at-spi2-core p7zip xdg-user-dirs xorg-minimal xorg-fonts xorg-video-drivers xsetroot gvfs gnome-keyring lxsession dash
+### Paquetes esenciales ###
+$il at-spi2-core p7zip xdg-user-dirs xorg-minimal xorg-fonts xorg-video-drivers \
+     xsetroot gvfs gnome-keyring lxsession dash
 
-#PARA COMPILAR(OPCIONAL)
-#$il base-devel
-
-#BASE
+### Base BSPWM + Herramientas ###
 $il bspwm sxhkd polybar dmenu rofi scrot xsetroot xdo setxkbmap numlockx \
-	dbus sakura elogind fuzzypkg fzf feh bat parcellite dragon pcmanfm
+     dbus sakura elogind fuzzypkg fzf feh bat parcellite dragon pcmanfm
 
-#PROGRAMAS ADICIONALES // AUDIO // TIPOGRAFIA // ETC
+### Programas adicionales y temas ###
 $il pulsemixer pipewire rtkit pfetch nerd-fonts nwg-look mpv arandr \
-	neovim xarchiver nitrogen firefox gnome-themes-extra-gtk picom
+     neovim xarchiver nitrogen firefox gnome-themes-extra-gtk picom
 
-#REPOS NON-FREE Y MULTILIB(32bit)
+### Activar repositorios non-free y multilib ###
 $il void-repo-{nonfree,multilib,multilib-nonfree}
-$s xbps-install -Sy
+xbps-install -Sy
 
-#LIBS PARA JUEGOS(OPCIONAL)
-#$il libgcc-32bit libstdc++-32bit libdrm-32bit libglvnd-32bit freetype-32bit vulkan-loader-32bit
+### Librerías 32-bit para juegos (opcional) ###
+$il mesa-dri-32bit glu-32bit libgcc-32bit libstdc++-32bit libdrm-32bit \
+     libglvnd-32bit freetype-32bit vulkan-loader-32bit \
+     mesa-vulkan-radeon mesa-vulkan-radeon-32bit
 
-#FIREFOX FONT FIX
-$s ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
-$s xbps-reconfigure -f fontconfig
+### Fix fuentes en Firefox ###
+ln -sf /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
+xbps-reconfigure -f fontconfig
 
 clear
 echo "Aplicando configuraciones..."
 sleep 2s
 
+### Activar servicios necesarios ###
+ln -sf /etc/sv/dbus /var/service/
 
-#INICIAR SERVICIOS
-$s ln -s /etc/sv/dbus /var/service/
-$s rm -r /var/service/polkitd
+# (opcional) desactivar polkitd si no se desea usar:
+sv down polkitd 2>/dev/null
+rm -f /var/service/polkitd
 
-#CONFIG
+### Actualizar carpetas de usuario ###
 xdg-user-dirs-update
 
-echo -e '#autostart
-\nif [ -d "$HOME/.local/bin" ] ; then
-\n    PATH="$HOME/.local/bin:$PATH"
-\nfi
-\npipewire &
-\nexec dbus-run-session bspwm'> $HOME/.xinitrc 
+### Crear ~/.xinitrc de manera segura ###
+cp ~/.xinitrc ~/.xinitrc.bak 2>/dev/null
+cat << 'EOF' > ~/.xinitrc
+# Autostart
+if [ -d "$HOME/.local/bin" ]; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+pipewire &
+exec dbus-run-session bspwm
+EOF
 
-#PIPEWIRE_CONFIG
-$s mkdir -p /etc/pipewire/pipewire.conf.d
-$s ln -s /usr/share/examples/wireplumber/10-wireplumber.conf /etc/pipewire/pipewire.conf.d/
-$s ln -s /usr/share/examples/pipewire/20-pipewire-pulse.conf /etc/pipewire/pipewire.conf.d/
+### Configuración Pipewire ###
+mkdir -p /etc/pipewire/pipewire.conf.d
+ln -sf /usr/share/examples/wireplumber/10-wireplumber.conf /etc/pipewire/pipewire.conf.d/
+ln -sf /usr/share/examples/pipewire/20-pipewire-pulse.conf /etc/pipewire/pipewire.conf.d/
 
-#ARCHIVOS DE CONFIG
-yes | cp -rf .config/* ~/.config/
-mkdir -p ~/.local/bin
-yes | cp -r bash/_scripts/* ~/.local/bin/
-yes | cp -r bash/.bashrc ~/.bashrc
-yes | cp -r bash/.bash_profile ~/.bash_profile
+### Copia de archivos de configuración ###
+mkdir -p ~/.config ~/.local/bin
+cp -rn .config/* ~/.config/
+cp -n bash/_scripts/* ~/.local/bin/ 2>/dev/null
+cp -n bash/.bashrc ~/.bashrc 2>/dev/null
+cp -n bash/.bash_profile ~/.bash_profile 2>/dev/null
 
-#CARPETA PARA CAPTURES DE PANTALLA
-mkdir $HOME/captures
+### Carpeta para capturas de pantalla ###
+mkdir -p ~/captures
 
-#wallpaper
-$s rm -r /usr/share/wall
-$s mkdir /usr/share/wall
-$s cp -r default_wallpaper/default.jpg /usr/share/wall/
+### Wallpaper predeterminado ###
+install -d /usr/share/wall
+cp -f default_wallpaper/default.jpg /usr/share/wall/
 
-###
+### Finalizar ###
 clear
-echo "Instalación de VoidBsp-term Completada"
-echo "Pulse cualquiera tecla para continuar..."
-read tecla
-clear
-$s reboot
+echo "Instalación de VoidBSP completada exitosamente."
+read -n 1 -s -r -p "Presione cualquier tecla para reiniciar..."
+echo
+reboot

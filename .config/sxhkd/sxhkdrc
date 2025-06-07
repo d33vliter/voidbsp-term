@@ -1,4 +1,4 @@
-#/usr/bin/env dash
+#!/usr/bin/dash
 #mi configs d33vliter
 
 ##aplicar configuraciones modificadas en sxhkdrc:
